@@ -160,7 +160,11 @@
         @media (max-width: 520px) {
             .navigation {
                 top: 12px;
+                right: 12px;
+                left: 12px;
+                width: auto;
                 gap: 6px;
+                transform: none;
             }
 
             .logo-pill {
@@ -175,13 +179,16 @@
             }
 
             .topbar {
+                min-width: 0;
+                flex: 1;
+                justify-content: space-between;
                 gap: 2px;
                 padding: 6px;
             }
 
             .topbar a {
-                padding: 8px 7px;
-                font-size: 11px;
+                padding: 8px clamp(4px, 1.8vw, 7px);
+                font-size: clamp(9px, 2.8vw, 11px);
             }
 
             main {
@@ -192,6 +199,35 @@
             .site-footer-content {
                 padding-right: 24px;
                 padding-left: 24px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .navigation {
+                right: 8px;
+                left: 8px;
+                gap: 4px;
+            }
+
+            .logo-pill {
+                width: 36px;
+                height: 36px;
+                flex-basis: 36px;
+            }
+
+            .logo-pill img {
+                width: 24px;
+                height: 24px;
+            }
+
+            .topbar {
+                gap: 0;
+                padding: 5px;
+            }
+
+            .topbar a {
+                padding: 6px 3px;
+                font-size: 9px;
             }
         }
     </style>
